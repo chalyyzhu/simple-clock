@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>Clock</title>
 </head>
 <body>
-<div style="width: 90vw">
+<div style="height: 90vw">
 <svg viewBox="0 0 1000 1000" >
 <rect x="505" y="179" fill="#603813" width="3" height="51"/>
 <rect x="415.578" y="203.145" transform="matrix(0.866 -0.5 0.5 0.866 -58.4447 239.1664)" fill="#603813" width="3" height="51"/>
@@ -227,17 +226,17 @@ jnWZMr1Tk3fFKKM3umVK72Yj05Or5bYDs/tuRMMf0G2EK6BgRFijeztCT/xOffPFLa/x+m002P6Z
 	var minute = document.getElementById('minute');
 	var hour = document.getElementById('hour');
 	function timeGetter(){
-		  var currentTime = new Date();
-		  var currentHour = currentTime.getHours();
-		  var currentMinute = currentTime.getMinutes();
-		  var currentSecond = currentTime.getSeconds();
-		  sec.setAttribute('transform','rotate('+6*currentSecond+' 506.844 383.436)');
-		  minute.setAttribute('transform','rotate('+6*currentMinute+' 506.844 383.436)');
-		  if(currentMinute!=60){
-		 	 hour.setAttribute('transform','rotate('+(currentHour*30+currentMinute/2)+' 506.844 383.436)');
+		var currentTime = new Date();
+		var currentHour = currentTime.getHours();
+		var currentMinute = currentTime.getMinutes();
+		var currentSecond = currentTime.getSeconds();
+		sec.setAttribute('transform','rotate('+6*currentSecond+' 506.844 383.436)');
+		minute.setAttribute('transform','rotate('+6*currentMinute+' 506.844 383.436)');
+		if(currentMinute !== 60){
+			hour.setAttribute('transform','rotate('+(currentHour*30+currentMinute/2)+' 506.844 383.436)');
 		}
 	}
-	setInterval(timeGetter,1000);
+	setInterval(timeGetter, 1000);
 </script>
 </body>
 </html>
